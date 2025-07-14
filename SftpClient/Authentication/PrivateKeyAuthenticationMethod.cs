@@ -38,8 +38,7 @@ public class PrivateKeyAuthenticationMethod : IAuthenticationMethod
             configuration.Username,
             new Renci.SshNet.PrivateKeyAuthenticationMethod(configuration.Username, privateKey))
         {
-            Timeout = TimeSpan.FromMilliseconds(configuration.ConnectionTimeout),
-            KeepAliveInterval = configuration.KeepAlive ? TimeSpan.FromSeconds(30) : TimeSpan.Zero
+            Timeout = TimeSpan.FromMilliseconds(configuration.ConnectionTimeout)
         };
     }
 }

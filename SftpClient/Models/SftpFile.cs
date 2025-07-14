@@ -1,4 +1,5 @@
 using Renci.SshNet.Sftp;
+using SftpClient.Extensions;
 
 namespace SftpClient.Models;
 

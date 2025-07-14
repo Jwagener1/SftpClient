@@ -31,8 +31,7 @@ public class PasswordAuthenticationMethod : IAuthenticationMethod
             configuration.Username,
             new Renci.SshNet.PasswordAuthenticationMethod(configuration.Username, _password))
         {
-            Timeout = TimeSpan.FromMilliseconds(configuration.ConnectionTimeout),
-            KeepAliveInterval = configuration.KeepAlive ? TimeSpan.FromSeconds(30) : TimeSpan.Zero
+            Timeout = TimeSpan.FromMilliseconds(configuration.ConnectionTimeout)
         };
     }
 }

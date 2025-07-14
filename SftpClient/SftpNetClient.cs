@@ -296,7 +296,7 @@ internal class SftpNetClient : Interfaces.ISftpClient
         try
         {
             return _client.ListDirectory(remotePath)
-                .Select(item => new SftpFile(item.FullName, item.Attributes));
+                .Select(item => new Models.SftpFile(item.FullName, item.Attributes));
         }
         catch (SftpPathNotFoundException ex)
         {
@@ -315,7 +315,7 @@ internal class SftpNetClient : Interfaces.ISftpClient
         try
         {
             return await Task.Run(() => _client.ListDirectory(remotePath)
-                .Select(item => new SftpFile(item.FullName, item.Attributes))
+                .Select(item => new Models.SftpFile(item.FullName, item.Attributes))
                 .ToList() as IEnumerable<Interfaces.ISftpFile>, cancellationToken);
         }
         catch (OperationCanceledException)
@@ -498,4 +498,4 @@ internal class SftpNetClient : Interfaces.ISftpClient
             throw new ObjectDisposedException(nameof(SftpNetClient));
         }
     }
-}}
+}

@@ -25,7 +25,7 @@ public class SftpClientBuilder
     /// <summary>
     /// Initializes a new instance of the <see cref="SftpClientBuilder"/> class
     /// </summary>
-    public SftpClientBuilder() : this(new SftpClientFactory())
+    public SftpClientBuilder() : this(new Factory.SftpClientFactory())
     {
     }
     
